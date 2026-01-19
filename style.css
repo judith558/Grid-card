@@ -1,0 +1,152 @@
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --grayish-blue: hsl(217, 19%, 35%);
+  --blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 13px;
+  background-color: var(--light-grayish);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+
+}
+
+.box {
+  display: grid;
+  grid-template-columns: 310px;
+  gap: 24px;
+  min-width: 375px;
+  width: 100%;
+}
+
+.testimonial {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 26px 32px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.name img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.name .text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.name h1 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.name h2 {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+
+.testimonial h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial p {
+  font-size: 13px;
+  opacity: 0.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* Specific card styles */
+
+.daniel {
+  background-color: var(--violet);
+  color: var(--white);
+  background-repeat: no-repeat;
+  background-position: top 0 right 20%;
+}
+
+.jonathan {
+  background-color: var(--grayish-blue);
+  color: var(--white);
+}
+
+.jeanette {
+  background-color: var(--white);
+  color: var(--grayish-blue);
+}
+
+.patrick {
+  background-color: var(--blackish-blue);
+  color: var(--white);
+}
+
+.kira {
+  background-color: var(--white);
+  color: var(--grayish-blue);
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+  .box {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .daniel {
+    grid-column: span 2;
+  }
+
+  .jonathan {
+    grid-column: 3;
+  }
+
+  .kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .jeanette {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .patrick {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+}
